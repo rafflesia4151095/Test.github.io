@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>village uchida</title>
     <link rel="stylesheet" href="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
   </head>
@@ -12,10 +15,8 @@
     <header>
       <div class="container">
         <div class="header-left">
-          <a href="#">
-            <img class="shop-logo" src="alt" href="#">
-            <!--仮置き<a>village uchida</a>-->
-            <h1>village uchida</h1>
+          <a href="#top">
+            <img class="shop-logo" src="https://cdn.phototourl.com/uploads/2026-03-15-c1e6b951-58bf-47f2-9621-29e085f6b7bd.png" href="#">
           </a>
         </div>       
         <!--始め　　スキップメニュー　三←これ 　-->
@@ -58,7 +59,7 @@
         </div>
         <div class="about-wrapper">
           <h1>about</h1>
-          <p>武蔵野市関前の「Village UCHIDA（ヴィレッジ ウチダ）」は、1971年創業の温かみのある理容店です。</p>
+          <p>武蔵野市関前の「Village UCHIDA（ヴィレッジ ウチダ）」は、１９７１年創業の温かみのある理容店です。</p>
           <p><span>男性のお客様へ</span>
             ベテラン店主による丁寧なカットが自慢。ハサミ一本主義で、髪質や頭の形に合わせた自然な仕上がりを実現します。白髪ぼかしや部分カットも好評で、「若々しく見える」との声多数。日常使いからフォーマルまで、いつものスタイルをキープ。</p>
           <p><span>女性のお客様へ</span>
@@ -68,33 +69,41 @@
         <div class="memu-wrapper">
           <h1>MEMU</h1>
             <p>全てのメニューは税込価格です。</p>
-            <h2>カットコース</h2>
-            <ul>
-              <li>大人<span>¥0000</span></li>
-              <li>学生（全般）<span>¥0000</span></li>
-              <li>小学生<span>¥0000</span></li>
-              <li>乳幼児<span>¥0000</span></li>
-            </ul>
-            <h2>カラーリング</h2>
-            <ul>
-              <li>コラーゲンカラー<span>¥0000</span></li>
-              <li>白髪ボカシ<span>¥0000</span></li>
-            </ul>
-            <h2>リラクゼーション（フェイス）</h2>
-            <ul>
-              <li>シェービングエステ<span>¥0000</span></li>
-              <li>リンパトリートメント「フェイス」<span>¥0000</span></li>
-              <li>ピーリング<span>¥0000</span></li>
-              <li>イヤースパ<span>¥0000</span></li>
-              <li>眉カット<span>¥0000</span></li>
-              <li>襟剃り<span>¥0000</span></li>
-              <li>背中剃り<span>¥0000</span></li>
-            </ul>
-            <h2>リラクゼーション（ヘッド）</h2>
-            <ul>
-              <li>ヘアケア<span>¥0000</span></li>
-              <li>リンパトリートメント「ヘッド」<span>¥0000</span></li>
-            </ul>
+            <div class="cut-course">
+              <h2>カットコース</h2>
+              <ul>
+                <li>大人<span>¥0000</span></li>
+                <li>学生（全般）<span>¥0000</span></li>
+                <li>小学生<span>¥0000</span></li>
+                <li>乳幼児<span>¥0000</span></li>
+              </ul>
+            </div>
+            <div class="coloring">
+              <h2>カラーリング</h2>
+              <ul>
+                <li>コラーゲンカラー<span>¥0000</span></li>
+                <li>白髪ボカシ<span>¥0000</span></li>
+              </ul>
+            </div>
+            <div class="relaxation-face">
+              <h2>リラクゼーション（フェイス）</h2>
+              <ul>
+                <li>シェービングエステ<span>¥0000</span></li>
+                <li>リンパトリートメント「フェイス」<span>¥0000</span></li>
+                <li>ピーリング<span>¥0000</span></li>
+                <li>イヤースパ<span>¥0000</span></li>
+                <li>眉カット<span>¥0000</span></li>
+                <li>襟剃り<span>¥0000</span></li>
+                <li>背中剃り<span>¥0000</span></li>
+              </ul>
+            </div>            
+            <div class="relaxation-head">
+              <h2>リラクゼーション（ヘッド）</h2>
+              <ul>
+                <li>ヘアケア<span>¥0000</span></li>
+                <li>リンパトリートメント「ヘッド」<span>¥0000</span></li>
+              </ul>
+            </div>            
         </div>
         <div class="img-wrapper">
           <img src="https://cdn.phototourl.com/uploads/2026-03-01-24d8e19d-c0e8-46f1-9a52-a7251a1d13ec.png">      
@@ -108,7 +117,7 @@
             <h1>Information</h1>
             <div class="Hours">
               <h2>Hours</h2>
-              <p>営業時間：9:00～19:00（L.O. 18:30）</p>
+              <p>営業時間：<span>9:00～19:00（L.O. 18:30）</span></p>
               <p>定休日：月・火曜日</p>
               <p>※変動の場合あり / X（旧Twitter）にてお知らせいたします。</p>
             </div>
@@ -124,7 +133,7 @@
               <p>Village Uchidaは予約優先制です</p>
               <p>基本的にはご予約をメインにご案内しております。</p>
               <p>ご予約はこちらから!</p>
-              <p>TEL:0422-53-6838</p>
+              <h2>TEL:0422-53-6838</h2>
             </div>  
           </div>
         </div> 
