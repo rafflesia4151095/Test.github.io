@@ -9,7 +9,7 @@ body {
   margin: 0;
   font-family: "Zen Maru Gothic";
   background-color: #F8F8F4;
-  color: #313131;
+  color:#313131;
 }
 
 a {
@@ -20,6 +20,7 @@ a {
 .container {
   max-width: 2000px;
   width: 100%;
+  align-items: center;
   padding: 0 30px;
   margin: 0 auto;
 }
@@ -29,15 +30,15 @@ h1{
 }
 
 h2{
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 p , ul{
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 span{
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 /* ヘッダー ====================================================================== */
@@ -46,24 +47,43 @@ header {
   height: 100px;
   width: 100%;
   background-color:#F8F8F4;
-  position :fixed;
+  position: fixed;
   top: 0;
-  z-index: 10;
+  display: flex;             /* ←追加：header自体をflex */
+  align-items: center;       /* ←追加：縦中央揃え */
+  padding: 0 30px;
+}
+
+.header-inner{
   display: flex;
+  flex: 1;
+  margin: 0 auto;
   align-items: center;
+}
+
+.header-left{
+  flex:4.5;
+}
+
+.header-right{
+  flex: 1;
 }
 
 .shop-logo {
   height: 85px;
 }
 
-.header-left {
-  float: left;
+.TEL{
+  text-align: left;
 }
 
-.header-right {
-  float: right;
+.TEL h2 a {
+  color: inherit;          /* 親と同じ色 */
+  text-decoration: none;   /* 下線なし */
+}
 
+.TEL h2 a:hover {
+  text-decoration: underline; /* ホバー時のみ下線 */
 }
 
 /* 画面固定ハンバーガーボタン */
@@ -269,6 +289,10 @@ nav.nav ul {
   border-bottom: 1px solid #313131;
 }
 
+.coloring p,.relaxation-head p{
+  font-size: 0.9rem;
+}
+
 /* img-wrapper ================================================================= */
 
 
@@ -306,6 +330,15 @@ nav.nav ul {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid #313131; 
+}
+
+.Reserve h2 a {
+  color: inherit;           /* 親と同じ色 */
+  text-decoration: none;    /* 下線なし */
+}
+
+.Reserve h2 a:hover {
+  text-decoration: underline; /* ホバー時のみ下線 */
 }
 
 .map-info-wrapper h1 , .map-info-wrapper h2 , .map-info-wrapper p{
