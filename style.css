@@ -46,6 +46,10 @@ span {
   font-size: clamp(0.5rem, 2.5vw, 1.4rem);   /* 小→0.8rem */
 }
 
+.small-text{
+  font-size: clamp(0.5rem, 2.5vw, 0.9rem)
+}
+
 
 /* ヘッダー ====================================================================== */
 
@@ -298,6 +302,7 @@ nav.nav ul {
   padding-bottom: 1.5rem;
   border-bottom: 1px solid #313131;
 }
+
 
 /* img-wrapper ================================================================= */
 
