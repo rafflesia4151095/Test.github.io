@@ -88,15 +88,11 @@
     height: 80px;
     padding: 0 20px;
   }
-  
-  .header-left {
-    flex: 1;
-  }
-  
+
   .header-right {
-    flex: 1;
+    padding-right: 55px; 
   }
-  
+
   .shop-logo {
     height: 60px; /* ロゴサイズ縮小 */
   }
@@ -177,8 +173,10 @@
    7. タブレット調整（769px〜1024px）
    ======================================== */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .header-left {
-    flex: 3.5;
+
+
+  .header-right {
+    padding-right: 50px; 
   }
   
   .container {
