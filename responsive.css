@@ -76,6 +76,40 @@
     visibility: visible;
   }
 
+@media screen and (max-width: 768px) {
+
+  /* 電話番号ボタン調整 */
+  .button001 {
+    max-width: 100% !important;
+  }
+  
+  .button001 h2 {
+    margin: 0;
+    font-size: clamp(0.7rem, 2.5vw, 1rem) !important;
+  }
+  
+  .button001 h2 a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 6px 15px;
+    line-height: 1.2;
+    font-size: 0.9rem !important;
+  }
+
+  /* font-weight修正 */
+  .button001 a {
+    font-weight: 600 !important;
+  }
+
+    /* 電話番号ボタンの矢印を非表示 */
+  .button001 a:after {
+    display: none !important;
+  }
+
+}
+
 /* ========================================
    2. ヘッダー調整（768px以下）
    ======================================== */
@@ -187,3 +221,4 @@
     max-width: 80%;
   }
 }
+
