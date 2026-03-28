@@ -19,7 +19,7 @@ a {
 }
 
 .container {
-  max-width: 2000px;
+  max-width: 1200px;
   width: 100%;
   align-items: center;
   padding: 0 30px;
@@ -88,16 +88,12 @@ header {
 }
 
 .tel-contact{
-  text-align: left;
+  text-align: center;
 }
 
 .tel-contact h2 a {
   color: inherit;          /* 親と同じ色 */
   text-decoration: none;   /* 下線なし */
-}
-
-.tel-contact h2 a:hover {
-  text-decoration: underline; /* ホバー時のみ下線 */
 }
 
 /* 画面固定ハンバーガーボタン */
@@ -348,14 +344,62 @@ nav.nav ul {
   text-decoration: none;    /* 下線なし */
 }
 
-.Reserve h2 a:hover {
-  text-decoration: underline; /* ホバー時のみ下線 */
-}
+ /* ホバー時のみ下線 */
+/*.Reserve h2 a:hover {
+  text-decoration: underline;
+}*/
 
 .map-info-wrapper h1 , .map-info-wrapper h2 , .map-info-wrapper p{
   text-align: left;
   margin-bottom: 0.2rem;
 }
+
+
+/* 001 */
+
+.button001 {
+  display: inline-block;  /* 幅を中身に合わせる */
+}
+
+.button001 a {
+    width: fit-content;     /* 文字幅に自動調整 */
+    min-width: 130px;       /* 最小サイズ保証 */
+    padding: 8px 20px;      /* パディングで余裕確保 */
+    border-radius: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: flex;
+    border: 0.5px solid #949494;
+    white-space: nowrap;       /* 強制1行 */
+}
+
+.button001 a:hover {
+    background: #313131;
+    color: #FFF;
+}
+
+.button001 a:after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid #313131;
+    border-right: 3px solid #313131;
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    border-radius: 1px;
+    transition: 0.3s ease-in-out;
+}
+
+.button001 a:hover:after {
+    border-color: #FFF;
+}
+
 
 /* footer================================================================= */
 
