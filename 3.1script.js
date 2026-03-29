@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // ドロワーメニューリンククリックで閉じる
-  const hrefLink = document.querySelectorAll('.linkList li a');
+  const hrefLink = document.querySelectorAll('.nav a');
   hrefLink.forEach((link) => {
     link.addEventListener('click', () => {
       document.body.classList.remove('show-nav');
