@@ -1,0 +1,233 @@
+@import url(style.css);
+@import url(responsive.css);
+/* TODO将来的にはresponsive.cssは移行後、削除 */
+
+/* index.html  ================================================================= */
+/* top-wrapper ================================================================= */
+
+.top-wrapper,
+.img-wrapper {
+  margin-bottom: 50px;
+}
+
+.top-wrapper img,
+.img-wrapper img {
+  max-width: 100%;
+}
+
+/* about-wrapper ================================================================= */
+
+.about-wrapper {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+.about-wrapper h1 {
+  margin-bottom: 1.5rem;
+}
+
+.about-wrapper h2 {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.about-wrapper p {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.about-wrapper span {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+
+
+/* menu-wrapper ================================================================= */
+
+.menu-wrapper {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  border: 1px solid #313131;
+  /* 枠線（太さ・実線・色） */
+  border-radius: 60px;
+  /* 角丸 */
+  padding: 30px 3rem;
+  /* 内側余白 */
+  max-width: 90%;
+  text-align: center;
+  background-color: none;
+}
+
+.menu-wrapper h1,
+.menu-wrapper h2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.menu-wrapper ul {
+  list-style: none;
+  /* 点を完全消去 */
+  padding-left: 0;
+  /* 左余白もリセット */
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.menu-wrapper li {
+  display: flex;
+  /* 横並びにする */
+  align-items: center;
+  justify-content: space-between;
+  /* 左:メニュー名 右:金額 */
+  gap: 1rem;
+  /* 余裕を少しあける（任意） */
+  margin-bottom: 0.5rem;
+}
+
+.cut-course,
+.coloring,
+.relaxation-face {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+
+
+.relaxation-head {
+  margin-bottom: 2rem;
+}
+
+.menu-inner {
+  display: flex;
+  gap: 3rem;
+}
+
+.menu-inner li {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.8px solid #313131;
+}
+
+.border-none {
+  margin-bottom: 0 !important;
+  border-bottom: none !important;
+}
+
+.left-inner {
+  flex: 1;
+}
+
+.right-inner {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+
+  .menu-inner {
+    display: block;
+    /* もしくは initial（初期値に戻す） */
+    gap: 0;
+    /* 横並びの隙間をなくす */
+  }
+
+  .left-inner {
+    flex: none;
+    /* flexの伸縮設定を無効化 */
+  }
+
+  .right-inner {
+    flex: none;
+    /* flexの伸縮設定を無効化 */
+  }
+
+}
+
+/* ========================================
+  5. メニュー調整（768px以下）
+   ======================================== */
+@media (max-width: 768px) {
+  .menu-wrapper {
+    max-width: 95%;
+    padding: 2rem 8%;
+    margin-bottom: 3rem;
+  }
+
+  .menu-wrapper li {
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .menu-price {
+    align-self: flex-end;
+  }
+}
+
+/* img-wrapper ================================================================= */
+
+
+
+/* map-info-wrapper ================================================================= */
+
+.map-info-wrapper {
+  display: flex;
+  gap: 3rem;
+  max-width: 100%;
+  margin: 0 auto 5rem auto;
+  align-items: stretch;
+}
+
+.map {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.map iframe {
+  flex: 1;
+  width: 100%;
+  /* HTMLのwidth属性無視 */
+  height: 100%;
+  /* HTMLのheight属性無視 */
+  border: 0;
+  /* HTMLのstyleから移動 */
+  border: 0.5px solid #949494;
+  border-radius: 10px;
+}
+
+.info {
+  flex: 1;
+}
+
+.Hours,
+.Access {
+  margin-bottom: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #313131;
+}
+
+
+
+.Reserve {
+  margin-bottom: 1rem;
+}
+
+.Reserve h2 a {
+  color: inherit;
+  /* 親と同じ色 */
+  text-decoration: none;
+  /* 下線なし */
+}
+
+/* ホバー時のみ下線 */
+/*.Reserve h2 a:hover {
+  text-decoration: underline;
+}*/
+
+.map-info-wrapper h1,
+.map-info-wrapper h2,
+.map-info-wrapper p {
+  text-align: left;
+  margin-bottom: 0.2rem;
+}
