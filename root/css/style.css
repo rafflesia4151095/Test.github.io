@@ -1,0 +1,437 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  padding-top: 100px;
+  /* ヘッダー高さと同じ値に */
+  margin: 0;
+  font-family: "Zen Maru Gothic";
+  background-color: #F8F8F4;
+  color: #505050;
+}
+
+a {
+  text-decoration: none;
+  color: #313131;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: clamp(1rem, 5vw, 2rem);
+  /* 小→1.25rem */
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: clamp(0.8rem, 4vw, 1.5rem);
+  /* 小→1.1rem */
+}
+
+h3 {
+  font-size: clamp(0.7rem, 3.5vw, 1.2rem);
+}
+
+p,
+ul {
+  font-size: clamp(0.6rem, 3vw, 1rem);
+  /* 小→0.95rem */
+}
+
+span {
+  font-size: clamp(0.7rem, 3.5vw, 1.2rem);
+  /* 小→1rem */
+}
+
+.linkList span {
+  font-size: clamp(0.5rem, 2.5vw, 1rem);
+  /* 小→0.8rem */
+}
+
+.small-text {
+  font-size: clamp(0.5rem, 2.5vw, 0.9rem)
+}
+
+.title-c {
+  text-align: center;
+}
+
+.title-l {
+  text-align: left;
+}
+
+
+/* header ====================================================================== */
+
+header {
+  width: 100%;
+  background-color: #F8F8F4;
+  position: fixed;
+  top: 0;
+  display: flex;
+  /* ←追加：header自体をflex */
+  align-items: center;
+  /* ←追加：縦中央揃え */
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 0%;
+  /* 元の上の余白（1%）に、セーフエリア分を足す */
+  padding-top: calc(1% + env(safe-area-inset-top));
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  flex: 1;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: clamp(20px, 5vw, 50px);
+}
+
+.shop-logo {
+  width: 100%;
+
+  max-width: 200px;
+
+  height: auto;
+}
+
+.tel-contact {
+  text-align: center;
+}
+
+.tel-contact h2 a {
+  color: inherit;
+  /* 親と同じ色 */
+  text-decoration: none;
+  /* 下線なし */
+}
+
+
+/* 画面固定ハンバーガーボタン========================================================= */
+.btn-trigger {
+  position: fixed;
+  /* 画面に固定 */
+  top: 31px;
+  right: 33px;
+  width: clamp(30px, 8vw, 40px);
+  height: clamp(26px, 7vw, 36px);
+  cursor: pointer;
+  z-index: 1002;
+  /* nav より前に出す */
+  top: 40px;
+  /* ヘッダーの高さに合わせて調整 */
+}
+
+.btn-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #313131;
+  border-radius: 4px;
+}
+
+.btn-trigger,
+.btn-trigger span {
+  display: inline-block;
+  transition: all .5s;
+  box-sizing: border-box;
+}
+
+.btn-trigger span:nth-of-type(1) {
+  top: 0;
+}
+
+.btn-trigger span:nth-of-type(2) {
+  top: 16px;
+}
+
+.btn-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+/* ハンバーガー → バツ アニメーション */
+#btn01.active span:nth-of-type(1) {
+  transform: translateY(17px) rotate(-45deg);
+}
+
+#btn01.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+#btn01.active span:nth-of-type(3) {
+  transform: translateY(-17px) rotate(45deg);
+}
+
+/* Drawer 共通 */
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, .3);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms ease-in;
+}
+
+nav.nav {
+  width: 300px;
+  height: 100vh;
+  background-color: #FFF;
+  right: -300px;
+  top: 0;
+  position: fixed;
+  padding: 22px 0;
+  transition: all 200ms ease-in-out;
+  z-index: 1001;
+}
+
+nav.nav ul {
+  border: none;
+  padding: 0;
+}
+
+.shop-logo-nav {
+  text-align: left;
+  padding: 10px 20px;
+}
+
+.shop-logo-2 {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+}
+
+.shop-logo-nav a {
+  text-decoration: none;
+  color: #505050;
+  font-size: 1.5rem;
+}
+
+.nav ul li {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li a {
+  padding: 10px 20px;
+  display: block;
+  color: #313131;
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 200ms ease;
+}
+
+.nav ul li a:hover {
+  background-color: #f1f1f1;
+}
+
+.nav ul li a span {
+  /* 英語と同じ位置に重ねる */
+  position: absolute;
+  left: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #908f8f;
+  font-weight: 100;
+  opacity: 0;
+  transition: all 200ms ease;
+  /* 既存と同じ200ms */
+}
+
+/* Show Nav 時の状態 */
+.show-nav .nav {
+  right: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .6);
+}
+
+.nav ul li a:hover span {
+  opacity: 1;
+}
+
+.show-nav .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* footer================================================================= */
+
+footer {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  /* 横中央 */
+  align-items: center;
+  /* 縦中央 */
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+footer a {
+  font-size: 0.8rem;
+}
+
+/* page-top-botton ================================================================= */
+
+.page-top {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  /* 矢印（span）と文字（p）を縦に並べる */
+  align-items: center;
+  /* 横方向の中央揃え */
+  justify-content: center;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  border: 0;
+  background: none;
+  transition: .2s;
+}
+
+/* 矢印と円を包むコンテナ（サイズは今まで通り） */
+.page-top span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  /* 今までの after の width */
+  height: 32px;
+  /* 今までの after の height */
+  margin-bottom: 5px;
+  /* 円と文字の間の隙間 */
+}
+
+/* 矢印（サイズ・太さは今まで通り） */
+.page-top span:before {
+  content: "";
+  display: block;
+  width: 12px;
+  /* 今までの before の width */
+  height: 12px;
+  /* 今までの before の height */
+  border: 1px solid #000;
+  border-width: 1px 1px 0px 0px;
+  transform: rotate(-45deg);
+  margin-top: 9px;
+  /* 矢印を円の少し上へ配置する微調整 */
+  margin-left: 1px;
+}
+
+/* 外枠の円（サイズは今まで通り） */
+.page-top span:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+  border-radius: 100%;
+}
+
+/* TOPの文字（サイズ・間隔は今まで通り） */
+.page-top p {
+  margin: 0;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-indent: 3px;
+  /* 字間による右寄れを補正して真のセンターへ */
+}
+
+.page-top.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* button001 電話ボタン---------------------------------------------*/
+
+.button001 {
+  display: inline-block;
+  /* 幅を中身に合わせる */
+  z-index: 1;
+}
+
+.button001 a {
+  width: fit-content;
+  /* 文字幅に自動調整 */
+  min-width: 130px;
+  /* 最小サイズ保証 */
+  padding: 8px 20px;
+  /* パディングで余裕確保 */
+  border-radius: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 5px 30px 5px 15px;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-weight: flex;
+  border: 0.5px solid #949494;
+  white-space: nowrap;
+  /* 強制1行 */
+}
+
+.button001 a:hover {
+  background: #313131;
+  color: #FFF;
+}
+
+.button001 a:after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-top: 3px solid #313131;
+  border-right: 3px solid #313131;
+  transform: rotate(45deg) translateY(-50%);
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  border-radius: 1px;
+  transition: 0.3s ease-in-out;
+}
+
+.button001 a:hover:after {
+  border-color: #FFF;
+}
+
+
+/*最低保証*/
+img{
+  max-width: 100%;
+}

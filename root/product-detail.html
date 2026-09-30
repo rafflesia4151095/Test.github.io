@@ -1,0 +1,76 @@
+<!-- １商品ページのテンプレート -->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>取扱商品詳細 | village uchida | 武蔵野市関前の理容室</title>
+
+  <meta name="description" content="武蔵野市関前 Village Uchidaで取り扱っている商品の詳細情報。">
+  <link rel="canonical" href="https://rafflesia4151095.github.io/Test.github.io/product-detail.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap">
+
+  <link rel="stylesheet" href="css/product-detail.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/product.css">
+
+  <script>
+    (async function includeHead() {
+      const response = await fetch('core/head.html');
+      const data = await response.text();
+      document.head.insertAdjacentHTML('beforeend', data);
+    })();
+  </script>
+</head>
+
+<body>
+
+  <div id="js-header"></div>
+  <div id="js-nav-area"></div>
+  <main>
+    <div class="container">
+      <div class="product-detail">
+        <!-- 商品名・見出し -->
+        <h2 id="detail-title">読み込み中...</h2>
+        <img id="detail-image" src="images/placeholder.png" alt="商品画像">
+        <div class="product-body">
+          <!-- 商品概要 -->
+          <div class="product-box">
+            <h3 class="product-subtitle">商品概要</h3>
+            <p id="detail-overview">読み込み中...</p>
+          </div>
+          <!-- 特徴 -->
+          <div class="product-feature">
+            <h3 class="product-subtitle">特徴</h3>
+            <ul id="detail-features">
+              <!-- 動的に挿入 -->
+            </ul>
+          </div>
+          <!-- 使用方法 -->
+          <div class="product-box">
+            <h3 class="product-subtitle">使用方法</h3>
+            <p id="detail-usage">読み込み中...</p>
+          </div>
+          <!-- ラベル 配合成分（全て記載） -->
+          <div class="product-box">
+            <h3 id="ingredients-title" class="product-subtitle"></h3>
+            <p id="detail-ingredients">読み込み中...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="js-footer"></div>
+  <div id="js-button-top"></div>
+  <script src="js/script.js"></script>
+
+  <!-- 分離したモジュールスクリプトの読み込み -->
+  <script type="module" src="js/product-detail.js"></script>
+</body>
+
+</html>

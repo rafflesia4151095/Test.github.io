@@ -1,0 +1,88 @@
+@import url(style.css);
+@import url(responsive.css);
+/*items.html=====================================================================================================*/
+
+h1 {
+  text-align: center;
+  margin: 30px 0px;
+}
+
+.items-container {
+  text-align: center;
+  margin-bottom: 60px;
+  border: 1px solid #313131;
+  border-radius: 60px;
+}
+
+.items-section {
+  max-width: 95%;
+  margin: 0 auto;
+  scroll-margin-top: 100px;
+  /*飛び先をheaderの高さ分ずらすため*/
+  border-bottom: 1px solid #313131;
+}
+
+.items-section:last-of-type {
+  border-bottom: none;
+}
+
+.items-section img:hover {
+  transform: scale(1.05);
+  /* （寄せる） */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.items-section h1 {
+  margin-bottom: 0px;
+}
+
+.items-section h2 {
+  margin: 30px 0px;
+}
+
+.items-section p {
+  margin-bottom: 1rem;
+}
+
+.items-inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.items {
+  flex: 0 0 33.33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+.items-title {
+  order: 1;
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.items-img {
+  order: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.items img {
+  max-width: 80%;
+  border-radius: 8%;
+  margin-bottom: 1rem;
+}
+
+.items-desc {
+  order: 3;
+}
+
+.items h3,
+.items p {
+  margin-bottom: 1rem;
+}
